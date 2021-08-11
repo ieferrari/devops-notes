@@ -1,0 +1,23 @@
+Tmux: Permite correr un programa dentro de tmux, salir, dejar el programa corriendo de fondo, volver y engancharse de nuevo al programa
+
+
+//1° inicio tmux
+~$tmux
+//2° inicio proceso
+~$ ./proceso.sh
+//3° para salir y desconectarse de la session, presiono ctrl+b y luego d
+~$ <ctrl> b
+~$ d
+
+//4° puedo cerrar todo
+~$ exit
+
+# Para volver a la session
+~$ tmux attach
+
+# Listar sesiones activas 1,2,3...
+tmux ls
+
+#volver a sesion 2
+~$ tmux attach -t 2
+

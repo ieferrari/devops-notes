@@ -1,0 +1,4 @@
+	OPENSSL
+
+TO DECRYPT
+$ openssl aes-256-ecb -e -k "paswordExample" -in inputFile -out o
