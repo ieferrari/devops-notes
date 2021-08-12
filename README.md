@@ -7,7 +7,7 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 ## Deploy
 * [AWS-EC2 + NGINX + uWSGI,  Django production server](/Deploy/AWS-EC2-NGINX-uWSGI-DJANGO.md)
 * [heroku + Django + PostgreSQL](/Deploy/heroku.md)
-* [AWS-Lambda + AWS-DynamoDB, FastAPI serverless application](): to do...
+* AWS-Lambda + AWS-DynamoDB, FastAPI serverless application: to do...
 
 ## Databases
 * [postgresql](/Databases/postgresql.md) Linux installation, command cheat sheet
@@ -26,8 +26,8 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 * [Wagtail CMS for DJango](/Development/wagtail.md)
 
 ## Linux
-* [Nvidia install](/Tools/nvidia.md)
-* [Samba file server](/Tools/samba.md)
+* [Nvidia install](/Linux/nvidia.md)
+* [Samba file server](/Linux/samba.md)
 
 ## Tools
 * [ssh](/Tools/ssh.md)
