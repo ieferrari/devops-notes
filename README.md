@@ -1,7 +1,7 @@
 # devops-notes
 Devops cheat sheets and summary notes. CI/CD, databases, deployment, development, and stuff...
 
-**Warning**: These notes are not a complete guide, just my own summary notes on some of the devops-related technologies I have been working with.
+**Warning**: These notes are not a complete guide, just my own summary notes, mainly on some of the devops-related technologies I have been working with.
 
 
 ## Deploy
@@ -30,3 +30,4 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 
 ## Tools
 * [ssh](/Tools/ssh.md)
+* [FFMPEG](/Tools/ffmpeg.md)
