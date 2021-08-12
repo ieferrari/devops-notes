@@ -6,6 +6,7 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 
 ## Deploy
 * [AWS-EC2 + NGINX + uWSGI,  Django production server](/Deploy/AWS-EC2-NGINX-uWSGI-DJANGO.md)
+* [heroku + Django + PostgreSQL](/Deploy/heroku.md)
 * [AWS-Lambda + AWS-DynamoDB, FastAPI serverless application](): to do...
 
 ## Databases
