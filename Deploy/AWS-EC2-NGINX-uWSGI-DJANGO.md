@@ -1,7 +1,4 @@
-############################
-ieferrari@fcai.uncu.edu.ar
-ieferrari
-Magoya22+
+
 
 Desplegar un servidor Django para producción en una instancia de
 Elastic Computer Cloud en  Amazon web services

@@ -1,10 +1,14 @@
+# Samba file server
+
 # start stop restart server
-~$ sudo service smbd <start/stop/restart>
+
+		~$ sudo service smbd <start/stop/restart>
 
 #Compartir carpeta con un servidor de archivos Samba
 
 
-EN EL SERVIDOR
+## EN EL SERVIDOR
+
 	~$sudo apt-get install samba
 	~$sudo smbpasswd -a <user>
 		passwd:
@@ -33,23 +37,29 @@ EN EL SERVIDOR
 		...
 	##
 
-EN EL CLIENTE WINDOWS
+***
+
+## EN EL CLIENTE WINDOWS
 	crear acceso directo a:
+
 		\\192.168.0.xxx\shared_folder
 	pide
 		usuario:
 		password:
 
-EN EL CLIENTE LINUX             http://www.ghacks.net/2009/11/04/connect-to-your-samba-server-from-linux}
-~$ sudo apte-get install smbclient
-~$ smbclient --user=<usuario del servidor> -L //<ip del servidor>
-	enter <usuario del servidor>'s password:
-~$ mkdir /<local folder dir>
+***
 
-~$ nano -e /etc/fstab
-#agrego
+## EN EL CLIENTE LINUX
 
-//<server ip>/<shared folder>   /<local folder dir>  username=<server user>, password=<server pass>,x-systemd.automount 0 0
+		~$ sudo apte-get install smbclient
+		~$ smbclient --user=<usuario del servidor> -L //<ip del servidor>
+			enter <usuario del servidor>'s password:
+		~$ mkdir /<local folder dir>
 
-#verifico que el montado funcione correctamente  montando "all"
-~$ sudo mount -a
+		~$ nano -e /etc/fstab
+		#agrego
+
+		//<server ip>/<shared folder>   /<local folder dir>  username=<server user>, password=<server pass>,x-systemd.automount 0 0
+
+		#verifico que el montado funcione correctamente  montando "all"
+		~$ sudo mount -a

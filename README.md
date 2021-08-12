@@ -1,9 +1,12 @@
 # devops-notes
-Devops cheat sheets and summary notes. CI/CD, datababes, deployment, development, and stuff...
+Devops cheat sheets and summary notes. CI/CD, databases, deployment, development, and stuff...
 
 **Warning**: These notes are not a complete guide, just my own summary notes on some of the devops-related technologies I have been working with.
 
 
+## Deploy
+* [AWS-EC2 + NGINX + uWSGI,  Django production server](/Deploy/AWS-EC2-NGINX-uWSGI-DJANGO.md)
+* [AWS-Lambda + AWS-DynamoDB, FastAPI serverless application](): to do...
 
 ## Databases
 * [postgresql](/Databases/postgresql.md) Linux installation, command cheat sheet
@@ -16,3 +19,11 @@ Devops cheat sheets and summary notes. CI/CD, datababes, deployment, development
 * [docker](/CI-CD/docker.md) to do...
 * [github-actions]() to do...
 * [gitlab](/CI-CD/gitlab.md) Local server installation, first steps
+
+
+## Development
+* [Wagtail CMS for DJango](/Development/wagtail.md)
+
+## Linux
+
+## Tools
