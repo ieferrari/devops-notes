@@ -25,5 +25,8 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 * [Wagtail CMS for DJango](/Development/wagtail.md)
 
 ## Linux
+* [Nvidia install](/Tools/nvidia.md)
+* [Samba file server](/Tools/samba.md)
 
 ## Tools
+* [ssh](/Tools/ssh.md)
