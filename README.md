@@ -30,5 +30,8 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 * [Samba file server](/Linux/samba.md)
 
 ## Tools
-* [ssh](/Tools/ssh.md)
+* [ssh](/Tools/ssh.md): installation, secret keys  management, tunneling, connection behind router, security...
 * [FFMPEG](/Tools/ffmpeg.md)
+
+## Security
+* [production secrets](/Security/production_secrets.md): how to store secret keys outside the main repository
