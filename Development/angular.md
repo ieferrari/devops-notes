@@ -6,7 +6,7 @@ Basic commands and cheat sheet
 Install, check version, and start a new App:
 
     npm install -g @angular/cli -g
-    ng -v  
+    ng version  
     ng new myApp --style scss --routing
 
 
