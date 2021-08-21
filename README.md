@@ -24,6 +24,7 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 
 ## Development
 * [Wagtail CMS for DJango](/Development/wagtail.md)
+* [Angular - Basic commands and cheat sheet ](/Development/angular.md)
 
 ## Linux
 * [Nvidia install](/Linux/nvidia.md)
