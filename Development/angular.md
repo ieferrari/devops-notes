@@ -118,6 +118,8 @@ Check build options inside the **angular.json** file
 (architect >> build >> configurations >> production >> [options])
 
     ng build
+    #or
+    ng build --prod
 
 You can find the output  files in the **/dist** folder
 
@@ -125,6 +127,10 @@ You can find the output  files in the **/dist** folder
 to update the packages in an app just run:
 
     ng update
+
+ .
+
+    npm update --force
 
 ### Docs
 to search specific [topic] in the documentation:
