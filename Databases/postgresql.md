@@ -34,3 +34,37 @@ see [docs](https://wiki.postgresql.org/wiki/Apt#Documentation)
     postgres=# GRANT ALL PRIVILEGES ON DATABASE basededatossur TO basemaster;
     GRANT
     ALTER USER username CREATEDB;
+
+Seleccionar base de datos para trabajar
+
+```
+\c my_database;
+```
+
+create a table inside the database:
+
+```sql
+CREATE TABLE accounts (
+	user_id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+        last_login TIMESTAMP
+);
+
+
+CREATE TABLE accounts (
+	id  serial PRIMARY KEY,
+	name VARCHAR ( 50 ) UNIQUE NOT NULL,
+	salary VARCHAR ( 50 ) NOT NULL,
+	age  VARCHAR ( 15 ) UNIQUE NOT NULL,
+
+);
+```
+
+
+Delete database:
+```sql
+DROP DATABASE [IF EXISTS] database_name;
+```

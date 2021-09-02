@@ -1,7 +1,7 @@
 # AWS DynamoDB
 * Fast ~1ms read time
 * access controls
-* flexible, scale to any workload
+* flexible, scale to any workload without loosing performance
 * stored on ssd, replicates and writes everything on three db servers
 * event driven programming
 
@@ -53,3 +53,10 @@ the sum of partition key + sort key must be unique to work as primary key
   * global secondary index: primary key + sort key, different from the original partition key in the table. Max 20 by table.
 
 It is fast and simple to find an object if you know the key, but it is slow and expensive to find without a key, because you must iterate aver many elements to find the target.
+
+
+### Single table design
+* maintenance: simpler configuration and access
+* queries: you cant join tables, but if you have everything on the same table and different sort keys you can get the same query results really fast
+*  forces a design in term of DynamoDB style:
+  1. define your access patterns
