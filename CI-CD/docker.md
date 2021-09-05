@@ -82,29 +82,35 @@ get a terminal inside  a docker container:
 * [install docker compose]( https://docs.docker.com/compose/install/#alternative-install-options)
 
 * docker volume ls
-
+***
 ## Dockerize
 
 create a Dockerfile in the root of your project
 
     FROM [doker_base_image:version]
 
-    WORKDIR /app   #cd app
+    WORKDIR /app                #cd app (inside the container)
     COPY package*.json ./
     RUN npm install
-    COPY . .
+    COPY . .                     # copy everthing in the Dockerfile folder  to /app
     ENV PORT=8080
     EXPOSE 8080
-    CMD ["npm", "start"]
+    CMD ["npm", "start"]     # will run at start
 
 
 create the docker image
 
-    docker build -t  [tag_name/my_project:version  .
+    docker build -t  [tag_name/my_project:version]   .
 
 
-now you can use this image for a base for other image or use **docker push** to upload to a repository, then download with **docker pull**
 
+now you can use this image for a base for other image or use **docker push** to upload to a repository, then download with **docker pull** , or run with  **docker run [tag_name/my_project:version]**
+
+or run exposing ports:
+
+    docker run -p 3000:3000 [tag_name/my_project:version]
+
+***
 ## Volumes
 A dedicated folder in the host (local) machine used for data persistence after you stop a container
 
@@ -136,7 +142,7 @@ to use the created volume
     docker system prune
 
 
-
+***
 ## Docker compose
 A tool to run multiple docker container at the same time, (1 process for each container)
 
