@@ -53,14 +53,6 @@ CREATE TABLE accounts (
         last_login TIMESTAMP
 );
 
-
-CREATE TABLE accounts (
-	id  serial PRIMARY KEY,
-	name VARCHAR ( 50 ) UNIQUE NOT NULL,
-	salary VARCHAR ( 50 ) NOT NULL,
-	age  VARCHAR ( 15 ) UNIQUE NOT NULL,
-
-);
 ```
 
 
