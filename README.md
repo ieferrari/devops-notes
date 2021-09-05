@@ -38,3 +38,4 @@ Devops cheat sheets and summary notes. CI/CD, databases, deployment, development
 
 ## Security
 * [production secrets](/Security/production_secrets.md): how to store secret keys outside the main repository
+* [sql injection](/sql_injection.md): example of vulnerable code and secure alternative with SQLAlchemy
