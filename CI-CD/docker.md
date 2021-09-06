@@ -69,11 +69,11 @@ To check logs in a container:
 
 get a terminal inside  a docker container:
 
-  docker exec -it  [container_id]  /bin/bash
-  docker exec -it  [container_id]  sh
-  root@[container_id]# env
-  [check all env variables]...
-  exit
+    docker exec -it  [container_id]  /bin/bash
+    docker exec -it  [container_id]  sh
+    root@[container_id]# env
+    [check all env variables]...
+    exit
 
 
 
