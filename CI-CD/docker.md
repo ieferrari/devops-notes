@@ -3,7 +3,7 @@
 * container: running env for image, with ports
 
 
-
+***
 ## Basic commands
 
 to run an image you must create a container:
@@ -56,8 +56,8 @@ to specify a name for a container
 
     docker run --name [my_new_name] redis:4.0
 
-
-### Debugging
+***
+## Debugging
 show container running and stopped:
 
   docker ps -a
@@ -122,7 +122,26 @@ to use the created volume
 
     docker run  --mount source=[my_shared_folder]
 
-#### stop everything:
+Share a mount a local_host_folder in a container_folder used by the app:
+
+    docker run -v [/full/paht/to/local_host_folder]:[/path/to/container_folder]   -p3000:3000 my_image
+
+You can use this to modfigy src code in the shared volume, and this will be used by the containder. You can also build a new image to save that volume inside a new container, using **docker build -t my_image:version2 .** as usual.
+
+***
+## Docker push
+You can use DockerHub  to store your images (free for public images), after creating an account login with:
+
+    docker login
+
+Then you can push the images with:
+
+    docker push  my_DockerHub_username/my_image:versionX
+
+
+***
+
+## stop everything:
 
     docker kill $(docker ps -q)
 
@@ -176,3 +195,16 @@ to run everything:
 
     docker-compose up
     docker-compose down
+
+
+
+
+
+
+### Docker vs Docker swarm vs Docker Compose vs Kubernetes
+
+
+* Docker: to deploy a single container
+* Docker Compose: run multiple containers in a single host machine, configuring a simple Yaml file
+* Docker swarm: run multiple containers in multiple hosts, for a scalable application
+* Kubernetes: to manage very large deployment of scalable application with automated containers.
