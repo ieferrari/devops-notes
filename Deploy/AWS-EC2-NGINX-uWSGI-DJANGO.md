@@ -1,9 +1,11 @@
 
+# AWS-EC2 production depoy: Django + NGINX + uWSGI
 
 Desplegar un servidor Django para producción en una instancia de
 Elastic Computer Cloud en  Amazon web services
 usando  y el servidor web enginex y uWSGI
 
+![full diagram](AWS-EC2-NGINX-uWSGI-DJANGO.png)
 ***
 
 # Crear nueva instancia EC2
