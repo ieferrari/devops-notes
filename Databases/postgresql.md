@@ -112,7 +112,7 @@ DROP DATABASE [IF EXISTS] database_name;
 # database migration
 
 ```
-pg_dump -C -h localhost -U superset superset | psql -h 190.210.55.162:5432 -U superset superset
+pg_dump -C -h localhost:5432 -U USERNAME PASSWORD | psql -h SERVER_IP:PORT -U USERNAME PASSWORD
 
-docker exec 71b5931cd6e3 pg_dump -C -h localhost -U superset superset | psql -h 190.210.55.162 -p 5432 -U superset superset
+docker exec CONTAINER_ID pg_dump -C -h localhost:5432 -U USERNAME PASSWORD | psql -h SERVER_IP -p PORT -U USERNAME PASSWORD
 ```
