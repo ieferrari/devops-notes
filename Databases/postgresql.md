@@ -1,12 +1,58 @@
 # PostgreSQL
-Object relational database.
-
-
-***
-## Linux installation
-see [docs](https://wiki.postgresql.org/wiki/Apt#Documentation)
+> Object relational database.
 
 ***
+## Istallation
+
+Docker compose:
+```
+services:s
+      db:
+        image: postgres
+        restart: always
+        ports: 
+          - 5432:5432
+        environment:
+          POSTGRES_PASSWORD: "Sup3rS3cur3Pa55w0rd"
+          # POSTGRES_USER: "admin"
+          # POSTGRES_DB: "my_db"
+        volumes:
+          - ./database-data:/var/lib/postgresql/data/
+```
+
+Check the [docs](https://wiki.postgresql.org/wiki/Apt#Documentation) for Linux installation.
+
+***
+## Client installation psql
+
+Intall from repository 13:
+
+    sudo apt-get install postgresql-client
+
+ Intall latest version 14:
+
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    sudo apt-get update
+    sudo apt-get -y install postgresql
+
+***
+## Connect to db-server
+
+    pqsl -U postgres -h 0.0.0.0 -p 5432
+
+***
+## Basic commands
+
+|  command                     |function                |
+|---                           |---                     |
+| \l                           | show databases         |
+| create database my_database  | create a new database  |
+| \c my_database               | use my_database        |
+
+
+
+
 ## Basic commands
 
     sudo su - postgres
@@ -59,4 +105,14 @@ CREATE TABLE accounts (
 Delete database:
 ```sql
 DROP DATABASE [IF EXISTS] database_name;
+```
+
+
+
+# database migration
+
+```
+pg_dump -C -h localhost:5432 -U USERNAME PASSWORD | psql -h SERVER_IP:PORT -U USERNAME PASSWORD
+
+docker exec CONTAINER_ID pg_dump -C -h localhost:5432 -U USERNAME PASSWORD | psql -h SERVER_IP -p PORT -U USERNAME PASSWORD
 ```
