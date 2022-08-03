@@ -6,18 +6,24 @@
 
 Docker compose:
 ```
-services:s
+version: "3.8"
+services:
       db:
         image: postgres
         restart: always
         ports: 
-          - 5432:5432
+          - 15432:5432
         environment:
           POSTGRES_PASSWORD: "Sup3rS3cur3Pa55w0rd"
           # POSTGRES_USER: "admin"
           # POSTGRES_DB: "my_db"
         volumes:
           - ./database-data:/var/lib/postgresql/data/
+        logging:
+          driver: "json-file"
+          options:
+            max-size: "10m"       
+
 ```
 
 Check the [docs](https://wiki.postgresql.org/wiki/Apt#Documentation) for Linux installation.
