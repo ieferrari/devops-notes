@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+      jupyterlab:
+        image: jupyter/tensorflow-notebook
+        container_name: my_notebook
+        restart: always
+        ports:
+          - 8888:8888
+        environment:
+           PYTHONPATH: "/home/jovyan/packages"
+        volumes:
+          - ./jupyter_home:/home/jovyan
+        logging:
+          driver: "json-file"
+          options:
+            max-size: "10m"                                  
+
+# following lines are optional to connect with traefik, 
+# just change jupyter.my.domain
+# and probably the name for traefik network
+        labels:
+          # Enable Traefik for jupyter_server service
+          - traefik.enable=true
+          # Tell traefic wich port is the container using
+          - traefik.http.services.jupyter_server.loadbalancer.server.port=8888
+          # http for this container
+          - traefik.http.routers.jupyter_server-http.entrypoints=http
+          - traefik.http.routers.jupyter_server-http.rule=Host(`jupyter.my.domain`)
+          # Connect to network (must be already created whith: docker)
+          - traefik.docker.network=traefik-public
+          # Make Traefik use this domain in HTTPS
+          - traefik.http.routers.jupyter_server-https.entrypoints=https
+          - traefik.http.routers.jupyter_server-https.rule=Host(`jupyter.my.domain`)
+          - traefik.http.routers.jupyter_server-https.tls=true
+          # Use the "le" (Let's Encrypt) resolver
+          - traefik.http.routers.jupyter_server-https.tls.certresolver=le
+          # https-redirect middleware to redirect HTTP to HTTPS
+          #- traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+          #- traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+          # Middleware to redirect HTTP to HTTPS
+          - traefik.http.routers.jupyter_server-http.middlewares=https-redirect
+          # Middleware to add user and password protection
+          #- traefik.http.routers.jupyter_server-https.middlewares=admin-auth
+        networks:
+          - traefik-public
+
+networks:
+    traefik-public:
+      external: true
+
