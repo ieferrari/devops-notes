@@ -1,5 +1,8 @@
 # Jupyter lab server
+Install using docker-compose.yml
 
+
+***
 ## First run setup
 create a folder for the local volume with all the permissions
 
@@ -20,11 +23,32 @@ Stop the server with [ctrl]+[C] and restart it with
 
 ***
 
+## Docker-compose overview
 
-## install packages in local volume
 
+```yaml
+version: "3.8"
+services:
+      jupyterlab:
+        image: jupyter/tensorflow-notebook
+        container_name: my_notebook
+        restart: always
+        ports:
+          - 8888:8888
+        environment:
+           PYTHONPATH: "/home/jovyan/packages"
+        volumes:
+          - ./jupyter_home:/home/jovyan
+        logging:
+          driver: "json-file"
+          options:
+            max-size: "10m"  
+```
+
+jupyter_home/ is used a persistence volume, every notebook will be saved there there.
+
+/home/jovyan/packages is included in PYTHONPATH, so any package installed there will be available to import
+
+To install packages in local volume use:
 
 	pip install -t packages my_lib
-
-
-
