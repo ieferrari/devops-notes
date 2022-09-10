@@ -2,31 +2,62 @@
 ## Usage cases
 
 ***
-# Installation
-## Docker compose
+## Launch a Redis instance with Docker-compose
 
+using the docker-compose.yml file on this folder:
+
+```sh
+cd redis
+docker-compose up -d
 ```
-version: "3.8"
-services:
-      db:
-        image: redis:7.0.4-bullseye
-        restart: always
-        command: >
-          --requirepass ${REDIS_PASSWORD}
-        ports: 
-          - 6379:6379
-        volumes:
-          - ./data:/data
-          #- ./redis.conf:/usr/local/etc/redis/redis.conf
-        logging:
-          driver: "json-file"
-          options:
-            max-size: "10m"    
-        # env_file:
-        #   - .env  
+
+> now you have a Redis instance available on port 6379
+
+## Connect to Redis
+
+Using redis-cli
+
+```sh
+sudo apt-get install redis-tools
+redis-cli -h localhost -p 6379 -a $MY_REDIS_PASSWORD
 
 ```
 
+Using a GUI Redis explorer:
+
+```sh
+pip install qredis
+qredis
+``` 
+
+Using a VScode extension:
+https://marketplace.visualstudio.com/items?itemName=Dunn.redis
+
+
+```
+[ctrl] + [shift] + [p]
+ext install Dunn.redis
+```
+
+with python
+
+```
+pip install redis 
+```
+
+
+
+
+## Work with Redis using Python
+
+```py
+import redis
+
+redis_conn = redis.Redis(host=redis_host, port=6379, db=0, password=redis_password)
+```
+
+
+** 
 check aditional configuration in [self documented redis.conf for Redis 7.0](https://raw.githubusercontent.com/redis/redis/7.0/redis.conf)
 
 

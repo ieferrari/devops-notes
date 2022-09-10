@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  db:
+    image: redis:7.0.4-bullseye
+    restart: always
+    command: >
+      --requirepass ${REDIS_PASSWORD}
+    ports: 
+      - 6379:6379
+    volumes:
+      - ./data:/data
+      #- ./redis.conf:/usr/local/etc/redis/redis.conf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"    
+    # env_file:
+    #   - .env  
