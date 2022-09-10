@@ -1,17 +1,45 @@
 # MySQL cheat-sheet
-Simple commands and examples for MySQL.
+
+> Simple commands and examples for MySQL.
 
 
-Login:
+## MySQL setup with docker-compose
 
-    $ mysql -u root -p password
+> Using the docker-compose.yml file in this folder.
+
+
+For testing, launch with:
+
+```sh
+docker-compose up -d
+mysql -h '127.0.0.1' -P 3306  -u test -p'test' test 
+``` 
+
+* user: test
+* password: test
+* includes an init.sql file with a demo table
+
+
+
+
+For production, change the following variables:
+
+```sh
+export MYSQL_ROOT_PASSWORD=some_value
+export MYSQL_DATABASE=some_value
+export MYSQL_USER=some_value
+export MYSQL_PASSWORD=some_value
+docker-compose up -d
+mysql -h '127.0.0.1' -P 3306  -u $MYSQL_USER -p'$MYSQL_PASSWORD' $MYSQL_DATABASE
+```
+
 
 Show tables and basic selection:
 
     SHOW DATABASES;
-    USE exampleDataBase;  //se conecta a una db
+    USE exampleDataBase;
     SHOW TABLES;
-    SELECT * FROM exampleTable; // muestra el contenido de una tabla
+    SELECT * FROM exampleTable;
 
 
 Create new user
