@@ -22,8 +22,7 @@ services:
         logging:
           driver: "json-file"
           options:
-            max-size: "10m"       
-
+            max-size: "10m"
 ```
 
 Check the [docs](https://wiki.postgresql.org/wiki/Apt#Documentation) for Linux installation.

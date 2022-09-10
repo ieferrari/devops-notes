@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:14.5-bullseye
+    restart: always
+    ports: 
+      - 15432:5432
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-my_secret_passwd_123}"
+      POSTGRES_USER: "${POSTGRES_USER:-admin}"
+      # POSTGRES_DB: "my_db"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
